@@ -1,0 +1,39 @@
+<%#
+
+  This is the code you'd put in the <head> of your layout file.
+
+  You can change the default variables (num, c, and g) to be whatever you'd like.
+    The Frmwrk default creates a 16-column grid with 50 pixel columns and 10 pixel gutters.
+
+%>
+
+<style type="text/css">
+.g{BACKGROUND:RGBA(255,0,0,0.2)}
+<%
+  num = number_of_columns = 16
+  c = column_width = 50
+  g = gutter_width = 10
+  (1..num).each { |n| -%>
+<%= ".gc"+n.to_s+"{width:"+(n*c + g * (n-1)).to_s+"px}" %>
+<% } -%>
+<% t = total_grid_width = num*c + (num+1)*g -%>
+.gcb{clear:both}
+.gcl{clear:left}
+.gcr{clear:right}
+.gfl{float:left;margin:0 0 <%= g %>px <%= g %>px}
+.gfr{float:right;margin:0 <%= g %>px <%= g %>px 0}
+div#frame{margin:0 auto;text-align:left;width:<%= t %>px;BACKGROUND:RGBA(255,0,0,0.2)}
+</style>
+
+<%#
+
+  The following is an example of the code you'd put in the <body> of your file.
+  
+%>
+
+<div id="frame">
+  <div class="g gfl gc4"><p>Here's my first box. It's floated left, and spans four columns.</p></div>
+  <div class="g gfr gc12"><p>Here's my second box. It's floated right, and spans twelve columns.</p></div>
+  <div class="g gfl gc4"><p>Here's my third box. It's also floated left, and spans four columns.</p></div>
+  <div class="g gcb gc16"><p>This spans the entire bottom of the document, after clearing both the left and right floats.</p></div>
+</div>
