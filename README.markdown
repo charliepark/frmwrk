@@ -9,7 +9,7 @@ It's for use in Ruby and Rails applications, but could easily be ported to other
 
 ## How to Use
 
-Just take the code in frmwrk.html.erb and stick it in the <head> of your ERB file (either in a layout file or in a partial, if you're calling it from several pages).
+Just take the code in frmwrk.html.erb and stick it in the \<head> of your ERB file (either in a layout file or in a partial, if you're calling it from several pages).
 
 You can change the 3 variables ("number\_of\_columns", "column\_width", and "gutter\_width") to be whatever you want, giving you the flexibility to set the number of columns you want, the width of the columns you want, and the width of the gutters that you want.
 
