@@ -14,15 +14,16 @@
 %>
 
 <style type="text/css">
+body{text-align:center}
 .g{BACKGROUND:RGBA(255,0,0,0.2)}
 <%
   num = number_of_columns = 16
   c = column_width = 50
   g = gutter_width = 10
   (1..num).each { |n| -%>
-<%= ".gc"+n.to_s+"{width:"+(n*c + g * (n-1)).to_s+"px}" %>
+<%= ".gc"+n.to_s+"{width:"+(n*c+(n-1)*g).to_s+"px}" %>
 <% } -%>
-<% t = total_grid_width = num*c + (num+1)*g -%>
+<% t = total_grid_width = num*c+(num+1)*g -%>
 .gcb{clear:both}
 .gcl{clear:left}
 .gcr{clear:right}
